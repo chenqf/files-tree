@@ -3,6 +3,7 @@
  */
 
 var fs = require('fs');
+var md5Ins = require('md5');
 
 function paramToArray(param) {
     if (Array.isArray(param)) {
@@ -51,6 +52,9 @@ exports.allFile = function allFile(path, options) {
                 directory: state.isDirectory(),
                 file: state.isFile()
             };
+            if(md5 && item.file){
+                item.md5 = md5Ins(fs.readFileSync(p));
+            }
             if (item.file) {
                 list.push(item);
             } else if (item.directory) {
@@ -98,6 +102,9 @@ exports.tree = function tree(path, options) {
                 directory: state.isDirectory(),
                 file: state.isFile()
             };
+            if(md5 && item.file){
+                item.md5 = md5Ins(fs.readFileSync(p));
+            }
             list.push(item);
             if (item.directory) {
                 item.list = tree(p);
@@ -145,6 +152,9 @@ exports.list = function (path, options) {
                 directory: state.isDirectory(),
                 file: state.isFile()
             };
+            if(md5 && item.file){
+                item.md5 = md5Ins(fs.readFileSync(p));
+            }
             list.push(item);
         }
     });

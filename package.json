@@ -1,6 +1,6 @@
 {
   "name": "files-tree",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "For recursive query folder under all documents and file information",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/chenqf/files-tree/issues"
   },
-  "homepage": "https://github.com/chenqf/files-tree#readme"
+  "homepage": "https://github.com/chenqf/files-tree#readme",
+  "dependencies": {
+    "md5": "^2.2.1"
+  }
 }
