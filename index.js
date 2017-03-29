@@ -58,7 +58,7 @@ exports.allFile = function allFile(path, options) {
             if (item.file) {
                 list.push(item);
             } else if (item.directory) {
-                list = list.concat(allFile(p));
+                list = list.concat(allFile(p,{ignore:ignore,suffix:suffix}));
             }
         }
     });
@@ -107,7 +107,7 @@ exports.tree = function tree(path, options) {
             }
             list.push(item);
             if (item.directory) {
-                item.list = tree(p);
+                item.list = tree(p,{ignore:ignore,suffix:suffix});
             }
         }
     });
