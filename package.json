@@ -1,6 +1,6 @@
 {
   "name": "files-tree",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "For recursive query folder under all documents and file information",
   "main": "index.js",
   "scripts": {
